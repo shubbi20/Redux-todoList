@@ -11,7 +11,6 @@ export function List({ ele }) {
     const dispatch = useDispatch();
 
     function changecomplete(ele) {
-        console.log(ele);
         dispatch(taskcomp({ title: ele.title, complete: !ele.complete }));
         setCol(!col);
     }
@@ -24,7 +23,7 @@ export function List({ ele }) {
     function delTask(x) {
         dispatch(removetodo({ title: x.title }));
     }
-    console.log(col);
+  
 
     return (
         <div className={`tasksection ${col && 'bllue'}`} key={ele.id}>

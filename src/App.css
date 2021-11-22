@@ -11,7 +11,7 @@ html{
 .container{
     width: 100vw;
     height: 100vh;  
-    /* background-color: #d9e2d1; */
+    background-color: #efffdd;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +19,10 @@ html{
   }
 
  .containercard{
-     border: 0.2rem solid rgb(223, 162, 134);
      height: 80%;
      width: 65%;
-     background-color: rgb(241, 249, 252); 
+     background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);
+     background: linear-gradient(to right, #64b3f4, #c2e59c);
      text-align: center;
      overflow: auto;
      border-radius: 4px;
