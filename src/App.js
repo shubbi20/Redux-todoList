@@ -1,6 +1,6 @@
 import './App.css';
 import {Search} from './components/todosearch'
-import { Alllist } from './components/showlist';
+import AllList  from './components/showlist';
 
 export function App() {
 
@@ -8,7 +8,7 @@ export function App() {
     <div className="container">
       <div className='containercard'>
               <Search />
-              <Alllist />
+              <AllList />
       </div> 
     </div>
   );

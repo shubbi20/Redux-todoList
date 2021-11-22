@@ -1,35 +1,50 @@
 import React from "react";
 import { useSelector } from 'react-redux';
-import {MdDelete} from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 import { removetodo, taskcomp } from "../redux/todosearchslice";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { useState } from "react";
 
-export function Alllist(props) {
+export function List({ ele }) {
+    const [col, setCol] = useState(false);
+    const dispatch = useDispatch();
 
-const dispatch= useDispatch();
-var todo = useSelector((state)=>state.todos);
+    function changecomplete(ele) {
+        console.log(ele);
+        dispatch(taskcomp({ title: ele.title, complete: !ele.complete }));
+        setCol(!col);
+    }
 
-function changecomplete(ele){
-    console.log(ele);
-   dispatch(taskcomp({title: ele.title , complete:!ele.complete}));
+    // function changecolor(x) {
+    //     const parent = x.target.parentNode;
+    //     parent.classList.toggle('bllue');
+    // }
+
+    function delTask(x) {
+        dispatch(removetodo({ title: x.title }));
+    }
+    console.log(col);
+
+    return (
+        <div className={`tasksection ${col && 'bllue'}`} key={ele.id}>
+        <input type='checkbox' className='checkicon' onChange={() => {changecomplete(ele)}} />  {ele.title} <div className='del-icon'> <MdDelete onClick={() => delTask(ele)} /></div> </div>
+    )
 }
 
-function changecolor(x){
-    const parent= x.target.parentNode;
-    parent.classList.toggle('bllue');
-}
-function delTask(x){
-    dispatch(removetodo({title: x.title}));     
+const Alllist = (props) => {
+    var todo = useSelector((state) => state.todos);
+    useEffect(() => {
+        localStorage.setItem('itemsArray', JSON.stringify(todo));
+    })
+
+    return (
+        <ul>
+            {todo.map((ele) => (
+                <List key={ele.id} ele={ele} />
+            ))}
+        </ul>
+    )
 }
 
-useEffect(()=>{
-    localStorage.setItem('itemsArray', JSON.stringify(todo));
-})
-
-return (
-<ul>
-{todo.map((ele,index)=>(<div className='tasksection' key={index}> <input type='checkbox' className='checkicon' onClick={()=>{changecomplete(ele)},changecolor }/>  {ele.title} <div className='del-icon'> <MdDelete  onClick={()=>delTask(ele)}/></div> </div>))}
-</ul>
-)
-}
+export default Alllist;

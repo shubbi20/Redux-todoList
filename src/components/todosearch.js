@@ -4,6 +4,7 @@ import '../App.css';
 import {useDispatch , useSelector} from 'react-redux' ;
 import {addtodo} from '../redux/todosearchslice';
 
+
 export function Search(props){
 const[text, setText]= useState("");
 
@@ -22,7 +23,7 @@ function submittask(event){
     }else{
     dispatch(addtodo( {title : text} ));
     localStorage.setItem('itemsArray', JSON.stringify(todo));
-        setText("");
+    setText("");
     }
     
 }
