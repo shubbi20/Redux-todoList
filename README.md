@@ -1,3 +1,25 @@
+## Introduction
+this is a react todo app using redux for state management. 
+
+- You can create to-do lists where you can add list of tasks
+- you can mark complete and also remove tasks
+- use redux for state management and these tasks is stored in the web storage API
+
+
+[![Site](https://img.shields.io/badge/Site_clickhere-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://todo-task-manager.netlify.app/)
+[![github:](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/shubbi20)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shubham-negi-098041124/)
+## Technologies Used
+* React.js 
+* Redux
+* CSS , WebStorage API
+
+
+## ScreenShots
+
+![](https://github.com/shubbi20/Redux-todoList/blob/main/src/images/desktop%20ss.JPG)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
